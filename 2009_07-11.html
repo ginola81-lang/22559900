@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSN Messenger History</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: Arial, Tahoma, sans-serif; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; }
+        #app { display: flex; flex-direction: column; height: calc(100vh - 40px); width: 95%; max-width: 800px; background-color: #e3efff; border: 1px solid #71869e; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .chat-area { flex: 1; background: white; border: 1px solid #99b1cb; margin: 0; overflow-y: scroll; padding: 10px; line-height: 1.4; }
+        .toolbar { background: linear-gradient(to bottom, #fcfdfe 0%, #cbd9e9 100%); padding: 5px; display: flex; gap: 8px; border-bottom: 1px solid #99b1cb; }
+        .toolbar img { height: 20px; }
+        .main-content { display: flex; flex: 1; overflow: hidden; padding: 10px; gap: 10px; }
+        .message-row { margin: 15px 0; font-size: 13px; }
+        .sender-info { color: #7d7d7d; font-size: 11px; margin-bottom: 3px; display: block; }
+        .message-text { display: block; padding-left: 15px; font-weight: bold; word-break: break-word; }
+        .user-blue .message-text { color: #00008b; }
+        .user-pink .message-text { color: #b000b0; }
+        .sidebar { width: 110px; display: flex; flex-direction: column; align-items: center; }
+        .avatar { width: 90px; height: 90px; border: 2px solid #99b1cb; background: white; padding: 2px; }
+        .action-bar { background: #e3efff; border-top: 1px solid #99b1cb; padding: 8px 15px; font-size: 11px; color: #666; }
+        @media (max-width: 600px) { .sidebar { display: none; } .message-text { padding-left: 5px; } }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header class="toolbar">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/invite_808.png">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/send%20files_810.png">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/webcam_812.png">
+        </header>
+        <div class="main-content">
+            <div class="chat-area">
+                
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By---DoN'TP@Nic - 27/07/2009 – 15:22:06</span>
+                    <span class="message-text">l'altra mattina all'alba tornando dal 2 e 20 c'era questa canzone in macchina e ti ho pensato....</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By---DoN'TP@Nic - 27/07/2009 – 15:22:07</span>
+                    <span class="message-text">📂 File inviato: B@By---DoN'TP@Nic sta inviando Coldplay - Don't Panic.mp3</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By---DoN'TP@Nic - 27/07/2009 – 15:22:10</span>
+                    <span class="message-text">ciao giò...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By---DoN'TP@Nic - 27/07/2009 – 18:03:39</span>
+                    <span class="message-text">📂 File inviato: È stato ricevuto il file C:\Documents and Settings\Gio\Documenti\File ricevuti\Coldplay - Don't Panic.mp3 inviato da B@By---DoN'TP@Nic.</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 27/07/2009 – 18:08:17</span>
+                    <span class="message-text">non mi sei indifferente...a me capita ogni giorno...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By---DoN'TP@Nic---PICpicPIC - 09/09/2009 – 15:47:41</span>
+                    <span class="message-text">📂 File inviato: B@By---DoN'TP@Nic---PICpicPIC sta inviando 01.Agnes - Release Me.mp3</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By---DoN'TP@Nic---PICpicPIC - 09/09/2009 – 15:56:27</span>
+                    <span class="message-text">📂 File inviato: È stato ricevuto il file C:\Documents and Settings\Gio\Documenti\File ricevuti\01.Agnes - Release Me.mp3 inviato da B@By---DoN'TP@Nic---PICpicPIC.</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 09/09/2009 – 16:08:48</span>
+                    <span class="message-text">Bellissima</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By---DoN'TP@Nic---PICpicPIC - 09/09/2009 – 16:16:09</span>
+                    <span class="message-text">Release ME!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:35:59</span>
+                    <span class="message-text">http://www.youtube.com/watch?v=Huvt_G7Nz0Y   il primo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:36:12</span>
+                    <span class="message-text">http://www.youtube.com/watch?v=zXL5UY1Fd9I&feature=related il secondo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:36:20</span>
+                    <span class="message-text">devi diventare anche tu</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:36:27</span>
+                    <span class="message-text">ferretti dipendente</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:36:55</span>
+                    <span class="message-text">ah finalmente le canzoni di drò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:37:07</span>
+                    <span class="message-text">ho cambiato genere...ti avviso!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:37:08</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:37:40</span>
+                    <span class="message-text">cambi sempre ....</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:37:46</span>
+                    <span class="message-text">ah si quello si</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:37:50</span>
+                    <span class="message-text">camaleonte sono</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:38:38</span>
+                    <span class="message-text">ma ti assicuro che ferretti è pazzesco</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:39:55</span>
+                    <span class="message-text">mo lo sento</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:39:58</span>
+                    <span class="message-text">e vediamo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:43:06</span>
+                    <span class="message-text">http://www.youtube.com/watch?v=hSrol8FHF9g&feature=related terzo....vediamo se con questi 3 riesco già</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:43:11</span>
+                    <span class="message-text">a fartelo piacere hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:43:13</span>
+                    <span class="message-text">sarai cambiata nel genere...ma mai  troppo lontana da me! il piano è stupendo...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:43:50</span>
+                    <span class="message-text">a me il piano nelle canzoni fa impazzire</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:44:04</span>
+                    <span class="message-text">ebbè in queste live ce n'è per molto</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:44:18</span>
+                    <span class="message-text">ma oltre al piano giò la voce credimi da i brividi...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:44:35</span>
+                    <span class="message-text">si mi piacciono....nn li avevo maisentiti</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:45:11</span>
+                    <span class="message-text">csi- ccccp -pgr vediti la storia...giovanni lindo ferretti è un pazzo hihihihi </span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:46:18</span>
+                    <span class="message-text">è drogato?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:46:53</span>
+                    <span class="message-text">e vedi  tu....però vedi che canzoni </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:46:54</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:46:58</span>
+                    <span class="message-text">http://www.youtube.com/watch?v=BeCfCHKcQHQ&feature=related</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:47:02</span>
+                    <span class="message-text">ultimaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:47:05</span>
+                    <span class="message-text">sentilee giò</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:47:13</span>
+                    <span class="message-text">le sto sentent</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:47:58</span>
+                    <span class="message-text">ma dove l'hai trovati?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:48:54</span>
+                    <span class="message-text">sono famosi...in fondo peppe fiore c'è crisciut però nn li ho mai sentiti con attenzione...poi me li ha fatti adorare za sound</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:53:24</span>
+                    <span class="message-text">giòòòòò ti ammazzzo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:57:57</span>
+                    <span class="message-text">sono famosi...in fondo peppe fiore c'è crisciut però nn li ho mai sentiti con attenzione...poi me li ha fatti adorare za sound
+                  Baby                      scrive (16.43):
+*giòòòòò ti ammazzzo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:58:31</span>
+                    <span class="message-text">ehi ma c'hai ancora problemi di connessione?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:58:36</span>
+                    <span class="message-text">no no</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:58:45</span>
+                    <span class="message-text">è capitato mo giuro hihihihih</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:58:54</span>
+                    <span class="message-text">è la tua presenza hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:58:56</span>
+                    <span class="message-text">quando ti scrivo certe volte mi ritornano indietro</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:59:00</span>
+                    <span class="message-text">ah si</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:59:37</span>
+                    <span class="message-text">daver</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 16:59:41</span>
+                    <span class="message-text">nn succedeva da tempo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 16:59:58</span>
+                    <span class="message-text">allora io sono il tuo virus</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 17:00:06</span>
+                    <span class="message-text">ecco brav</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 17:00:10</span>
+                    <span class="message-text">lo stavo per dire...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 17:00:13</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 17:00:23</span>
+                    <span class="message-text">ahah</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 19:47:01</span>
+                    <span class="message-text">drò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:47:48</span>
+                    <span class="message-text">DIMMI Tèèè</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 19:48:25</span>
+                    <span class="message-text">niente ...era da tanto che nn scrivevo e volevo vedere com'era ...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:49:39</span>
+                    <span class="message-text">hihihih</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:49:43</span>
+                    <span class="message-text">che bello giòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:49:49</span>
+                    <span class="message-text">io sn con la scrivania piena di libri</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:49:58</span>
+                    <span class="message-text">sto esaurendo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:50:03</span>
+                    <span class="message-text">nn vedo l'ora d ifinire</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:50:57</span>
+                    <span class="message-text">http://www.youtube.com/watch?v=MLE2ArHWMsI</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 19:50:59</span>
+                    <span class="message-text">:D</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:54:40</span>
+                    <span class="message-text">giò sn sbagliata e lo sai benissimo...ma come ho detto ieri ad ylenia...nessuno mi conosce come te e nessuno ha vissuto mai quello che noi due abbiamo vissuto...forse capita perchè di bene ce ne vogliamo tanto...al di la delle mie assenza...al di la delle distanze e delle difficoltà!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:54:43</span>
+                    <span class="message-text">PUNTO!</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 19:58:37</span>
+                    <span class="message-text">e quando nn ci sei si sente....se ci pensi bene abbiamo avuto sin dal principio questi problemi...alle medie ,appena conosciuti, nn ci siamo parlati x 7 mesi ahah...però alla fine ritoniamo sempre allo stesso punto.. </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:58:50</span>
+                    <span class="message-text">e per quello</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:58:51</span>
+                    <span class="message-text">ti dico</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:58:54</span>
+                    <span class="message-text">che la cosa fa ridere...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:59:02</span>
+                    <span class="message-text">però nello stesso tempo è bella...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:59:12</span>
+                    <span class="message-text">è una caratteristica che abbiamo...diciamola così hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 19:59:30</span>
+                    <span class="message-text">ma però mo basta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:59:34</span>
+                    <span class="message-text">mo basta però</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:59:40</span>
+                    <span class="message-text">si infatti hihihih</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:59:52</span>
+                    <span class="message-text">ammazzam piJamn a cavuc</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 19:59:54</span>
+                    <span class="message-text">però basta</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 20:00:12</span>
+                    <span class="message-text">ti devo uccidere</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 20:00:18</span>
+                    <span class="message-text">e lo so...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 20:00:25</span>
+                    <span class="message-text">prima o poi ci riuscirai...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:10:58</span>
+                    <span class="message-text">giò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:11:04</span>
+                    <span class="message-text">coincidenza guarda tu...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:11:09</span>
+                    <span class="message-text">è finito il periodo di noD</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:11:11</span>
+                    <span class="message-text">e mo?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:26:37</span>
+                    <span class="message-text">ahah</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:26:42</span>
+                    <span class="message-text">disistalla</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:26:47</span>
+                    <span class="message-text">e scaricati </span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:26:49</span>
+                    <span class="message-text">avira</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:26:56</span>
+                    <span class="message-text">molte cose so cambiate</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:27:27</span>
+                    <span class="message-text">avira</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:27:28</span>
+                    <span class="message-text">???</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:27:46</span>
+                    <span class="message-text">si</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:27:48</span>
+                    <span class="message-text">ape</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:28:39</span>
+                    <span class="message-text">http://dwb.html.it/index.php?softname=avira_antivir_personal_it_19.exe&code=1258921695&q=NDYzNnxhdmlyYS1hbnRpdmlyLXBlcnNvbmFsLWZyZWUtYW50aXZpcnVz</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:28:46</span>
+                    <span class="message-text">disinstalla iol nod</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:28:50</span>
+                    <span class="message-text">e mettici questo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:29:24</span>
+                    <span class="message-text">ok</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:29:27</span>
+                    <span class="message-text">perfect</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:29:32</span>
+                    <span class="message-text">thanks</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:35:21</span>
+                    <span class="message-text">gio ma sta copinado i miei file nn capisco?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:35:36</span>
+                    <span class="message-text">che?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:35:39</span>
+                    <span class="message-text">che file?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:35:43</span>
+                    <span class="message-text">mi sn isdcritta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:35:49</span>
+                    <span class="message-text">ora utente e tutto</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:35:50</span>
+                    <span class="message-text">noo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:35:52</span>
+                    <span class="message-text">ora dice</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:35:55</span>
+                    <span class="message-text">nn registra</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:36:08</span>
+                    <span class="message-text">nn devi spuntare le due pzione</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:36:14</span>
+                    <span class="message-text">e vai avanti</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:36:32</span>
+                    <span class="message-text">mi chiede user e pass</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:36:45</span>
+                    <span class="message-text">ma avira dici?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:36:54</span>
+                    <span class="message-text">no meropa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:36:58</span>
+                    <span class="message-text">memopal mi hai mandato</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:37:04</span>
+                    <span class="message-text">noo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:37:08</span>
+                    <span class="message-text">vai sugoogle</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:37:11</span>
+                    <span class="message-text">e scrivi avira</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:37:14</span>
+                    <span class="message-text">primo link</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:37:21</span>
+                    <span class="message-text"> e scaricati avira free</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:37:37</span>
+                    <span class="message-text">n'cuda a tia</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:37:49</span>
+                    <span class="message-text">pivelilna</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:44:10</span>
+                    <span class="message-text">mi dice di comprare</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:44:14</span>
+                    <span class="message-text">qualche software</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:44:42</span>
+                    <span class="message-text">ma come</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:44:44</span>
+                    <span class="message-text">asp</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:44:53</span>
+                    <span class="message-text">che te lo mando io</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:45:02</span>
+                    <span class="message-text">ecco </span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:45:27</span>
+                    <span class="message-text">nn sei migliorata</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:45:48</span>
+                    <span class="message-text">no anzi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:45:50</span>
+                    <span class="message-text">peggio</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:49:10</span>
+                    <span class="message-text">si paga?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:49:20</span>
+                    <span class="message-text">noo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:49:24</span>
+                    <span class="message-text">📂 File inviato: Giò sta inviando C:\Documents and Settings\Gio\Desktop\avira_antivir_personal_it_19.zip</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:49:27</span>
+                    <span class="message-text">hihihii</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:49:52</span>
+                    <span class="message-text">accetta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:49:57</span>
+                    <span class="message-text">e u sa</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:50:18</span>
+                    <span class="message-text">tristes</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:51:08</span>
+                    <span class="message-text">nn  vaaaaaaaa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:51:09</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:51:29</span>
+                    <span class="message-text">va va</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:51:36</span>
+                    <span class="message-text">bè mi vado a vedere un film</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:51:38</span>
+                    <span class="message-text">in attesa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:51:45</span>
+                    <span class="message-text">a dopo Giòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòòò</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:52:03</span>
+                    <span class="message-text">ok</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:52:04</span>
+                    <span class="message-text">ok</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:52:21</span>
+                    <span class="message-text">baci</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:58:28</span>
+                    <span class="message-text">📂 File inviato: Invio di "avira_antivir_personal_it_19.zip" a Baby non riuscito.</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:58:48</span>
+                    <span class="message-text">giò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:58:53</span>
+                    <span class="message-text">rimanda che mi si è spento il pc hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:59:26</span>
+                    <span class="message-text">📂 File inviato: Giò sta inviando C:\Documents and Settings\Gio\Desktop\avira_antivir_personal_it_19.zip</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 21:59:34</span>
+                    <span class="message-text">ti pareva</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:59:43</span>
+                    <span class="message-text">certe cose nn cambiano</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 21:59:45</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 22:01:41</span>
+                    <span class="message-text">infatti</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 22:01:46</span>
+                    <span class="message-text">ma lo sapevo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 22:01:51</span>
+                    <span class="message-text">guarda un pò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 22:51:37</span>
+                    <span class="message-text">📂 File inviato: Trasferimento del file "avira_antivir_personal_it_19.zip" completato.</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 22:55:18</span>
+                    <span class="message-text">thanksss</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 22:55:20</span>
+                    <span class="message-text">fattooo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 22:55:32</span>
+                    <span class="message-text">un bacione giòòò vado a nannaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 22:55:37</span>
+                    <span class="message-text">n0otteeeeeeeeeeeee</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/11/2009 – 22:56:20</span>
+                    <span class="message-text">notte</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 22/11/2009 – 22:56:31</span>
+                    <span class="message-text">(L)</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 26/11/2009 – 19:45:25</span>
+                    <span class="message-text">ciao drò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:26:21</span>
+                    <span class="message-text">📂 File inviato: Baby sta inviando DSCN0074.JPG</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:26:21</span>
+                    <span class="message-text">📂 File inviato: Baby sta inviando DSCN0075.JPG</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 27/11/2009 – 21:33:40</span>
+                    <span class="message-text">fammi avere la registrazione</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 27/11/2009 – 21:33:41</span>
+                    <span class="message-text">:D</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 27/11/2009 – 21:33:53</span>
+                    <span class="message-text">le fanno alle radio</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:35:35</span>
+                    <span class="message-text">nn so giòòò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:35:37</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:35:46</span>
+                    <span class="message-text">ma vedo se ce l'ha rosariuccio gliela chiedo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:35:47</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:35:52</span>
+                    <span class="message-text">tiic pisci dall risate</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:36:02</span>
+                    <span class="message-text">io la ospite di happy hour hihihihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:36:05</span>
+                    <span class="message-text">ancora ci penso e rido</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:36:07</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 27/11/2009 – 21:40:30</span>
+                    <span class="message-text">haha</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 27/11/2009 – 21:40:38</span>
+                    <span class="message-text">vadoa  amngiare ...tamara</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:41:10</span>
+                    <span class="message-text">ok</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:41:12</span>
+                    <span class="message-text">ughihihih</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:41:24</span>
+                    <span class="message-text">📂 File inviato: È stato ricevuto il file C:\Documents and Settings\Gio\Documenti\File ricevuti\DSCN0074.JPG inviato da Baby.</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 27/11/2009 – 21:41:30</span>
+                    <span class="message-text">📂 File inviato: È stato ricevuto il file C:\Documents and Settings\Gio\Documenti\File ricevuti\DSCN0075.JPG inviato da Baby.</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:33:14</span>
+                    <span class="message-text">Tamara </span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:33:16</span>
+                    <span class="message-text">ci sei?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:33:24</span>
+                    <span class="message-text">amoooooo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:33:25</span>
+                    <span class="message-text">e u sa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:33:27</span>
+                    <span class="message-text">ca ci sign</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:33:55</span>
+                    <span class="message-text">:D</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:34:02</span>
+                    <span class="message-text">chi fa?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:34:03</span>
+                    <span class="message-text">sei stata in radio?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:34:05</span>
+                    <span class="message-text">hai sentito il pezzaccio?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:34:10</span>
+                    <span class="message-text">nooo ma che radio pazzoide</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:34:10</span>
+                    <span class="message-text">siiiii</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:34:18</span>
+                    <span class="message-text">stupend</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:34:26</span>
+                    <span class="message-text">è tutt'oggi che la metto a palla</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:34:42</span>
+                    <span class="message-text">esci stasera?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:35:00</span>
+                    <span class="message-text">e ora ti faccio sentire un'altro pezzaccio</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:35:26</span>
+                    <span class="message-text">http://www.youtube.com/watch?v=smWiT7qN_F0</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:35:28</span>
+                    <span class="message-text">cosi l'aggiungi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:35:29</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:35:32</span>
+                    <span class="message-text">quello è stupendo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:35:34</span>
+                    <span class="message-text">madòòòò</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:36:08</span>
+                    <span class="message-text">ben tornata  dròòòòòòòòòòòòò</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:36:15</span>
+                    <span class="message-text">:D</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:36:37</span>
+                    <span class="message-text">buan troveat cumpa giuvà</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:37:57</span>
+                    <span class="message-text">quello però è tosto</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:38:00</span>
+                    <span class="message-text">lo sento pure io</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:38:03</span>
+                    <span class="message-text">mi riprende proprio</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 28/11/2009 – 20:39:14</span>
+                    <span class="message-text">(F)</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:39:30</span>
+                    <span class="message-text">(L)</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:40:31</span>
+                    <span class="message-text">vado di la giò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:40:35</span>
+                    <span class="message-text">vediti battiato su rai3</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:40:37</span>
+                    <span class="message-text">tamara va</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:40:38</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Baby - 28/11/2009 – 20:44:24</span>
+                    <span class="message-text">baci</span>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <div class="avatar">
+                    <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/avatars/msn.png" width="90">
+                </div>
+            </aside>
+        </div>
+        <footer class="action-bar">
+            Analisi completata: letti 215 messaggi.
+        </footer>
+    </div>
+</body>
+</html>

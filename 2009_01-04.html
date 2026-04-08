@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSN Messenger History</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: Arial, Tahoma, sans-serif; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; }
+        #app { display: flex; flex-direction: column; height: calc(100vh - 40px); width: 95%; max-width: 800px; background-color: #e3efff; border: 1px solid #71869e; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .chat-area { flex: 1; background: white; border: 1px solid #99b1cb; margin: 0; overflow-y: scroll; padding: 10px; line-height: 1.4; }
+        .toolbar { background: linear-gradient(to bottom, #fcfdfe 0%, #cbd9e9 100%); padding: 5px; display: flex; gap: 8px; border-bottom: 1px solid #99b1cb; }
+        .toolbar img { height: 20px; }
+        .main-content { display: flex; flex: 1; overflow: hidden; padding: 10px; gap: 10px; }
+        .message-row { margin: 15px 0; font-size: 13px; }
+        .sender-info { color: #7d7d7d; font-size: 11px; margin-bottom: 3px; display: block; }
+        .message-text { display: block; padding-left: 15px; font-weight: bold; word-break: break-word; }
+        .user-blue .message-text { color: #00008b; }
+        .user-pink .message-text { color: #b000b0; }
+        .sidebar { width: 110px; display: flex; flex-direction: column; align-items: center; }
+        .avatar { width: 90px; height: 90px; border: 2px solid #99b1cb; background: white; padding: 2px; }
+        .action-bar { background: #e3efff; border-top: 1px solid #99b1cb; padding: 8px 15px; font-size: 11px; color: #666; }
+        @media (max-width: 600px) { .sidebar { display: none; } .message-text { padding-left: 5px; } }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header class="toolbar">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/invite_808.png">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/send%20files_810.png">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/webcam_812.png">
+        </header>
+        <div class="main-content">
+            <div class="chat-area">
+                
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 21/01/2009 – 17:44:16</span>
+                    <span class="message-text">the Killers HUMAN!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 21/01/2009 – 17:44:16</span>
+                    <span class="message-text">scarica</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 22/01/2009 – 21:31:41</span>
+                    <span class="message-text">ehi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 25/01/2009 – 16:03:45</span>
+                    <span class="message-text">Carmela desidera avviare una videochiamata con te.
+Accetta (Alt+C) Rifiuta (Alt+D)</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 25/01/2009 – 16:03:56</span>
+                    <span class="message-text">ridotta ad un internet point</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 25/01/2009 – 16:04:15</span>
+                    <span class="message-text">Non hai risposto a una videochiamata di Carmela.</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 16:24:09</span>
+                    <span class="message-text">ancora niente internet?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 16:24:17</span>
+                    <span class="message-text">ci sei?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:23:39</span>
+                    <span class="message-text">hai comprato internet?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:23:48</span>
+                    <span class="message-text">no</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:23:49</span>
+                    <span class="message-text">gio</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:23:53</span>
+                    <span class="message-text">oggi ho fatto la pazza per casa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:24:01</span>
+                    <span class="message-text">purtroppo con internet</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:24:12</span>
+                    <span class="message-text">abbiamo problemi con le bollette che nn sn sstate pagatre in passato</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:24:15</span>
+                    <span class="message-text">e siamo di nuovo in trattativa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:24:21</span>
+                    <span class="message-text">ho trovato questa linea nn protetta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:24:33</span>
+                    <span class="message-text">ma durera??? mi dice segnale assente ma qualcosa me la apre</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:24:35</span>
+                    <span class="message-text">che posos fare???</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:24:43</span>
+                    <span class="message-text">è il mio unico filo di vita</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:25:00</span>
+                    <span class="message-text">quando torni?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:25:17</span>
+                    <span class="message-text">il 23 febbraio </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:25:27</span>
+                    <span class="message-text">qua siamo pure a rischio ciclone</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:25:29</span>
+                    <span class="message-text">nn puoi capire</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:25:32</span>
+                    <span class="message-text">che stiamo passando</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:26:12</span>
+                    <span class="message-text">ma davvero?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:20</span>
+                    <span class="message-text">si</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:26:20</span>
+                    <span class="message-text">che c'è? piove?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:21</span>
+                    <span class="message-text">gio</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:24</span>
+                    <span class="message-text">l'oceano</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:26:26</span>
+                    <span class="message-text">vento?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:31</span>
+                    <span class="message-text">è quasi entrato nelle case</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:26:35</span>
+                    <span class="message-text">loceano?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:35</span>
+                    <span class="message-text">nn hai sentito i telegiornali</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:42</span>
+                    <span class="message-text">in spagna c'`un allarme generale</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:26:44</span>
+                    <span class="message-text">ke bello!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:45</span>
+                    <span class="message-text">c'e' un vento da paura</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:49</span>
+                    <span class="message-text">è spaventoso</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:53</span>
+                    <span class="message-text">nn possiamo uscire di casa a due giorni</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:26:56</span>
+                    <span class="message-text">kissa il mare com'è agitato</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:26:56</span>
+                    <span class="message-text">la protezione civile</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:27:04</span>
+                    <span class="message-text">passa per le case</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:27:08</span>
+                    <span class="message-text">e fa multe a chi esce</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:27:11</span>
+                    <span class="message-text">fa paura</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:27:38</span>
+                    <span class="message-text">il mare è spaventoso</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:27:48</span>
+                    <span class="message-text">senti ma per sta linea allora?? come faccio a prenderla con segnale assente???</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:27:49</span>
+                    <span class="message-text">è`normale?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:28:01</span>
+                    <span class="message-text">lo prendi il segnale</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:28:11</span>
+                    <span class="message-text">altrimenti ora nn potevi scrivere</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:28:26</span>
+                    <span class="message-text">lo prendo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:28:28</span>
+                    <span class="message-text">ma esce assente</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:28:32</span>
+                    <span class="message-text">magari stesse cosi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:28:40</span>
+                    <span class="message-text">credimi che sto uscendo pazza</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:28:42</span>
+                    <span class="message-text">ho avuto una sfiga</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:28:44</span>
+                    <span class="message-text">enorme</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:28:46</span>
+                    <span class="message-text">con internet</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:29:13</span>
+                    <span class="message-text">lo rpendi ed è anche veloce</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:29:23</span>
+                    <span class="message-text">è pazzesco</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:29:40</span>
+                    <span class="message-text">qua esce linea nn protetta segnale assente...se prendessesolo un altro po sarebbe perfetto</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:29:54</span>
+                    <span class="message-text">perche posso aprire una pagina alla volta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:29:55</span>
+                    <span class="message-text">assurdo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:29:59</span>
+                    <span class="message-text">ma sei veloce e vca meglio di casa tua ad acri</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:29:59</span>
+                    <span class="message-text">tutto oggi sto girando per casa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:30:02</span>
+                    <span class="message-text">pure nel bagno</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:30:09</span>
+                    <span class="message-text">assurdo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:30:27</span>
+                    <span class="message-text">novita gio???</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:30:29</span>
+                    <span class="message-text">che mi dici?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:30:32</span>
+                    <span class="message-text">è`da una vita</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:30:33</span>
+                    <span class="message-text">che nn ci sentiamo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:30:40</span>
+                    <span class="message-text">dp quella coincidenza pazzesca</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:30:47</span>
+                    <span class="message-text">niente mi è solo saltata la seduta di feb</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:30:57</span>
+                    <span class="message-text">ora ci vuole aprile 11</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:31:03</span>
+                    <span class="message-text">perche???</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:31:06</span>
+                    <span class="message-text">mi avevi detto</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:31:08</span>
+                    <span class="message-text">che era fine febbraio</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:31:14</span>
+                    <span class="message-text">che è`successo?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:31:55</span>
+                    <span class="message-text">nn ce l'ho fatta</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:31:59</span>
+                    <span class="message-text">con l'esame</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:33:40</span>
+                    <span class="message-text">va be dai</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:33:45</span>
+                    <span class="message-text">l'importante è`che cm è finita</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:33:52</span>
+                    <span class="message-text">io dal 12 al 17</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:33:53</span>
+                    <span class="message-text">vado a barcellona</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:33:53</span>
+                    <span class="message-text">con 3.50</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:33:57</span>
+                    <span class="message-text">poi in portogallo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:34:01</span>
+                    <span class="message-text">e poi si torna</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:34:04</span>
+                    <span class="message-text">ho avuto un periodo di esami di merda</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:34:15</span>
+                    <span class="message-text">ora ho quello dispagnolo tostissimo martedi e mercoledi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:34:19</span>
+                    <span class="message-text">e spero di prendermi sto certificatino almeno</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:34:39</span>
+                    <span class="message-text">3.50 che significa?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:00</span>
+                    <span class="message-text">tre euro e cinquanta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:03</span>
+                    <span class="message-text">andata e ritorno</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:35:11</span>
+                    <span class="message-text">ammazza</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:12</span>
+                    <span class="message-text">da santiago</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:14</span>
+                    <span class="message-text">dstiamo 5 giorni ad un ostello</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:20</span>
+                    <span class="message-text">ed è`quello che devo cercare subito</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:35:26</span>
+                    <span class="message-text">con gli amici di casa?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:39</span>
+                    <span class="message-text">per il resto lunedi mi trasferisco</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:39</span>
+                    <span class="message-text">a casa di ale</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:41</span>
+                    <span class="message-text">abbiamo risolto</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:35:47</span>
+                    <span class="message-text">ma siamo scesi ad un patto tranqujillissimo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:36:05</span>
+                    <span class="message-text">tanto tra 20 gg te ne vai</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:36:08</span>
+                    <span class="message-text">paolo ha delle piante e le mette nella mia stanza che ``e la piu piccola quindi diciamo che gli ho quasi </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:36:11</span>
+                    <span class="message-text">fatto un piacere</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:36:13</span>
+                    <span class="message-text">si si </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:36:22</span>
+                    <span class="message-text">ma con loro ho risolto...siamo scesi a grandi compromessi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:36:29</span>
+                    <span class="message-text">e ora siamo + amci di prima</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:36:34</span>
+                    <span class="message-text">potevi anche nn farlo gurada</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:36:36</span>
+                    <span class="message-text">nn ci eravamo proprio capiti</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:36:42</span>
+                    <span class="message-text">si ma nn mi costa nulla</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:36:55</span>
+                    <span class="message-text">è tutt na situazione perfetta hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:37:02</span>
+                    <span class="message-text">bene</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:37:16</span>
+                    <span class="message-text">e di altro??</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:37:18</span>
+                    <span class="message-text">a roma che si dice'</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:37:22</span>
+                    <span class="message-text">???</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:37:44</span>
+                    <span class="message-text">io nn sto uscendo proprio in questo periodo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:38:06</span>
+                    <span class="message-text">ieri brutto tempo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:38:07</span>
+                    <span class="message-text">io pure...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:38:07</span>
+                    <span class="message-text">niente</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:38:21</span>
+                    <span class="message-text">ma io da quando so salito nemmeno 1 volta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:46:29</span>
+                    <span class="message-text">e ad acri quando scendi=</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:46:29</span>
+                    <span class="message-text">???</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:46:39</span>
+                    <span class="message-text">mercoledi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:46:49</span>
+                    <span class="message-text">sto fio a asabato</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:46:56</span>
+                    <span class="message-text">sto fino a sabato</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:47:05</span>
+                    <span class="message-text">e poi riscendi=?==</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:47:37</span>
+                    <span class="message-text">non lo so proprio...credo inizi marzo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:48:11</span>
+                    <span class="message-text">io nn poso credere</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:48:15</span>
+                    <span class="message-text">che sta per finire tutto</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:49:20</span>
+                    <span class="message-text">beh all'uni prima o poi dobbiamo finire tutti...io c'ho messo un bel pò di "poi"</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:49:32</span>
+                    <span class="message-text">ma va</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:49:39</span>
+                    <span class="message-text">hai approfondito</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:49:39</span>
+                    <span class="message-text">e fa sempre bene</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 25/01/2009 – 23:50:09</span>
+                    <span class="message-text">approfondito?non credo proprio</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:50:18</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:50:19</span>
+                    <span class="message-text">eh si </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@ByInEspaña - 25/01/2009 – 23:50:22</span>
+                    <span class="message-text">che serve sempre</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:49:10</span>
+                    <span class="message-text">gio dove vai????</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 04/03/2009 – 12:51:43</span>
+                    <span class="message-text">devo scendere</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 04/03/2009 – 12:51:46</span>
+                    <span class="message-text">ad acri</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:51:52</span>
+                    <span class="message-text">di nuovoo?????</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:51:54</span>
+                    <span class="message-text">wowooowwww</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 04/03/2009 – 12:51:58</span>
+                    <span class="message-text">yes</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:52:00</span>
+                    <span class="message-text">e fino a quando resti?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 04/03/2009 – 12:52:06</span>
+                    <span class="message-text">1 settimana circa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:52:51</span>
+                    <span class="message-text">e bravo ...allora domani sera un giretto si puo fare...io sto avendo esami e sn incasinatissima per ò la sera sul tardi ci si può vedere..</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:53:01</span>
+                    <span class="message-text">e bravo a giuvannuzz</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:53:02</span>
+                    <span class="message-text">ma </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:53:05</span>
+                    <span class="message-text">quando ti laurei???</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:53:11</span>
+                    <span class="message-text">la sai la data ora?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 04/03/2009 – 12:53:36</span>
+                    <span class="message-text">x ora è 21 aprile...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 04/03/2009 – 12:53:41</span>
+                    <span class="message-text">ma sto in mare aperto</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 04/03/2009 – 12:53:47</span>
+                    <span class="message-text">ancora devo fare l'ultimo esame</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:54:09</span>
+                    <span class="message-text">siamo tutti in mare aperto giòòò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:54:11</span>
+                    <span class="message-text">ma ce la farai!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:54:13</span>
+                    <span class="message-text">tranquillo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela - 04/03/2009 – 12:54:34</span>
+                    <span class="message-text">io torno a fare qualcosa...domani sera mandami un mes che ci vediamo che stasera nn credo proprio di uscire</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 04/03/2009 – 12:54:54</span>
+                    <span class="message-text">ok</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 18/03/2009 – 14:56:30</span>
+                    <span class="message-text">io sn proprio presa da mille cose... e nn mi sto connettendo proprio, oggi ho chiesto la tesi e quindi mi si prospetta un altro bel periodo del cazzo...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 18/03/2009 – 14:56:35</span>
+                    <span class="message-text">io nn mi sto facendo sentire...ma tu....</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 20/03/2009 – 20:31:42</span>
+                    <span class="message-text">tanti auguri stronzo...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 20/03/2009 – 20:31:42</span>
+                    <span class="message-text">potevi anche dirlo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 20/03/2009 – 20:31:52</span>
+                    <span class="message-text">proprio l'altra volta ti avevo scritto e niente...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 20/03/2009 – 20:31:54</span>
+                    <span class="message-text">fammi sapere</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 20/03/2009 – 20:32:00</span>
+                    <span class="message-text">almeno quando ti laurei adesso...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 01/04/2009 – 14:29:41</span>
+                    <span class="message-text">giòòò </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 01/04/2009 – 14:29:46</span>
+                    <span class="message-text">è ufficiale il 21 aprile???</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 01/04/2009 – 14:30:02</span>
+                    <span class="message-text">che io mi devo organizzare che mi chiameranno per fare una prova a frascati e nn vorrei fare due viaggi ok?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 02/04/2009 – 15:06:08</span>
+                    <span class="message-text">📂 File inviato: ·´)›]|I{•------»B@BY«------•}I|[‹(`· sta inviando 03-gianna_nannini-maledetto_ciao(2)(2).mp3</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 02/04/2009 – 15:06:59</span>
+                    <span class="message-text">📂 File inviato: Impossibile ricevere il file "03-gianna_nannini-maledetto_ciao(2)(2).mp3" inviato da ·´)›]|I{•------»B@BY«------•}I|[‹(`·.</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Gi? - 02/04/2009 – 15:22:01</span>
+                    <span class="message-text">rimanda</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 05/04/2009 – 13:42:56</span>
+                    <span class="message-text">📂 File inviato: Giò sta inviando C:\Users\giovanni\Desktop\04042009.mp4</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 05/04/2009 – 13:45:08</span>
+                    <span class="message-text">📂 File inviato: ·´)›]|I{•------»B@BY«------•}I|[‹(`· sta inviando Malika ayane - come foglie.mp3</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 05/04/2009 – 13:49:50</span>
+                    <span class="message-text">📂 File inviato: Impossibile ricevere il file "Malika ayane - come foglie.mp3" inviato da ·´)›]|I{•------»B@BY«------•}I|[‹(`·.</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 05/04/2009 – 13:49:50</span>
+                    <span class="message-text">📂 File inviato: Invio di "04042009.mp4" a ·´)›]|I{•------»B@BY«------•}I|[‹(`· non riuscito.</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 05/04/2009 – 13:50:21</span>
+                    <span class="message-text">rimanda</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 05/04/2009 – 13:50:46</span>
+                    <span class="message-text">📂 File inviato: ·´)›]|I{•------»B@BY«------•}I|[‹(`· sta inviando Malika ayane - come foglie.mp3</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 05/04/2009 – 13:51:04</span>
+                    <span class="message-text">nn ce la faccio mi sa te che perdo il bus lo mando stasera...sto scendendo ad acri</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 16:51:40</span>
+                    <span class="message-text">dopo cena mi passi a prendere o passo io?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 07/04/2009 – 16:52:01</span>
+                    <span class="message-text">passo io ho macchina</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 16:52:07</span>
+                    <span class="message-text">perfetto</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 16:52:14</span>
+                    <span class="message-text">per le 22 va bene?? che prima sn a cena da zia...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 07/04/2009 – 16:52:26</span>
+                    <span class="message-text">va bene certo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 16:52:37</span>
+                    <span class="message-text">claro ok...entonces hasta pronto!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 16:52:43</span>
+                    <span class="message-text">nos vemos luego...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 07/04/2009 – 16:53:48</span>
+                    <span class="message-text">????</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 16:53:59</span>
+                    <span class="message-text">ni vidim e dop</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 16:54:01</span>
+                    <span class="message-text">hihihihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 07/04/2009 – 16:54:02</span>
+                    <span class="message-text">ah</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 07/04/2009 – 16:54:17</span>
+                    <span class="message-text">claro claro</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 16:54:27</span>
+                    <span class="message-text">vale!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 19:33:11</span>
+                    <span class="message-text">accetta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 19:33:12</span>
+                    <span class="message-text">·´)›]|I{•------»B@BY«------•}I|[‹(`· desidera avviare una videochiamata con te.
+Accetta (Alt+C) Rifiuta (Alt+D)</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 19:33:38</span>
+                    <span class="message-text">Non hai risposto a una videochiamata di ·´)›]|I{•------»B@BY«------•}I|[‹(`·.</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 19:33:40</span>
+                    <span class="message-text">nn ci sei </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 19:33:44</span>
+                    <span class="message-text">ti voleva cam</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">·´)›]|I{•------»B@BY«------•}I|[‹(`· - 07/04/2009 – 19:33:56</span>
+                    <span class="message-text">alla prossima alloraaaaa</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 07/04/2009 – 20:08:11</span>
+                    <span class="message-text">c sono</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:02:32</span>
+                    <span class="message-text">Roma???</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:03:04</span>
+                    <span class="message-text">yes</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:03:17</span>
+                    <span class="message-text">io casa ancora morta ammazzata...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:03:19</span>
+                    <span class="message-text">nn ho dormito proprio</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:03:55</span>
+                    <span class="message-text">ma che</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:04:09</span>
+                    <span class="message-text">qui stamatina e ieri altre scosse</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:05:12</span>
+                    <span class="message-text">giò credimi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:05:15</span>
+                    <span class="message-text">sto morendo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:05:26</span>
+                    <span class="message-text">anche se mi bussano alla porta muoio</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:08:33</span>
+                    <span class="message-text">mo arriva la botta tranquilla</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:09:10</span>
+                    <span class="message-text">fanculo giò</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:09:18</span>
+                    <span class="message-text">hihi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:10:44</span>
+                    <span class="message-text">cmq mi devi raccontare un sacco di cose....</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:10:57</span>
+                    <span class="message-text">ma proprio un sacco sacco</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:11:06</span>
+                    <span class="message-text">eee</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:11:23</span>
+                    <span class="message-text">va be avrai capito che mi sn lasciata con luigi...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:11:25</span>
+                    <span class="message-text">quello si</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:11:39</span>
+                    <span class="message-text">me l'hanno detto</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:11:40</span>
+                    <span class="message-text">che ho chiuso con francesca anche se ieri mi faceva la bella faccia ...e stop1
+</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:11:48</span>
+                    <span class="message-text">2 importanti eventi...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:11:52</span>
+                    <span class="message-text">quello l'ho capito</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:12:04</span>
+                    <span class="message-text">Che prima o poi dovevano avvenire....</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:12:23</span>
+                    <span class="message-text">ma con luigi è un periodo?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:12:36</span>
+                    <span class="message-text">no</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:12:39</span>
+                    <span class="message-text">NOOOOOO
+</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:12:43</span>
+                    <span class="message-text">Con luigi è finita</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:12:54</span>
+                    <span class="message-text">addirittura! convinta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:13:02</span>
+                    <span class="message-text">📂 File inviato: B@By sta inviando Gianluca Grignani - Una donna cosi.mp3</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:13:03</span>
+                    <span class="message-text">si si</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:13:11</span>
+                    <span class="message-text">nn era + cosa credimi...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:13:56</span>
+                    <span class="message-text">...e io nn so venuto a trovarti x lui cazzo....uff</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:15:37</span>
+                    <span class="message-text">📂 File inviato: B@By sta inviando Gianluca Grignani - Una donna cosi.mp3</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:15:39</span>
+                    <span class="message-text">capì</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:15:48</span>
+                    <span class="message-text">...è andata cosi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:18:50</span>
+                    <span class="message-text">📂 File inviato: Impossibile ricevere il file "Gianluca Grignani - Una donna cosi.mp3" inviato da B@By.</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:18:57</span>
+                    <span class="message-text">📂 File inviato: B@By sta inviando Gianluca Grignani - Una donna cosi.mp3</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:19</span>
+                    <span class="message-text">giòòò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:21</span>
+                    <span class="message-text">mi vado a fare una doccia</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:24</span>
+                    <span class="message-text">ed esco</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:26</span>
+                    <span class="message-text">che qua rischio lo sclero</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:24:30</span>
+                    <span class="message-text">ok</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:30</span>
+                    <span class="message-text">un bacione grandeeeeeeee</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:34</span>
+                    <span class="message-text">ci vediamo presto</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:24:35</span>
+                    <span class="message-text">a dp</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:37</span>
+                    <span class="message-text">a proposito...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:46</span>
+                    <span class="message-text">c'è qualcosa che ti piace e che ti manca per la lurea?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:24:51</span>
+                    <span class="message-text">per nn farti un regalo che nn ti piace....</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:25:04</span>
+                    <span class="message-text">pensaci...e con me nn farti problemi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:25:30</span>
+                    <span class="message-text">ma nn ti preoccupoare</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:25:37</span>
+                    <span class="message-text">non rompere </span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:25:38</span>
+                    <span class="message-text">basta che vieni è già un regalo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:25:45</span>
+                    <span class="message-text">vengo certo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:25:50</span>
+                    <span class="message-text">ma il regalo te lo deveo fare...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:25:55</span>
+                    <span class="message-text">quindi ti prego</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:25:58</span>
+                    <span class="message-text">te ne prego proprio</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:26:01</span>
+                    <span class="message-text">ok</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:26:04</span>
+                    <span class="message-text">se hai qualcosa che ti piace</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:26:06</span>
+                    <span class="message-text">ti farò sapere allora</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:26:08</span>
+                    <span class="message-text">almeno con me nn farti problemi</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:26:10</span>
+                    <span class="message-text">cosi nn scleri</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:26:14</span>
+                    <span class="message-text">è inutile prenderti una minghiata</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:26:19</span>
+                    <span class="message-text">lo sai che nn ho pazienza in queste cose</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:26:47</span>
+                    <span class="message-text">io avevo pensato a un buono che ti lascio a un ottico e che ti vai a spendere....</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:26:56</span>
+                    <span class="message-text">visto che ti devi comprare gli occhialoi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:27:00</span>
+                    <span class="message-text">ma se hai altro dimmi tu...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:27:16</span>
+                    <span class="message-text">gli occhilia em li prendono gli amici dell'uni</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:27:20</span>
+                    <span class="message-text">ecco visto?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:27:25</span>
+                    <span class="message-text">caso mai la borsa x il pc che nn ho</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:27:25</span>
+                    <span class="message-text">allora vedi come devi fare...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:27:27</span>
+                    <span class="message-text">e fammi sapere...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:27:33</span>
+                    <span class="message-text">ma la borsa è troppo poco...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:27:44</span>
+                    <span class="message-text">no va bene</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:28:05</span>
+                    <span class="message-text">dai ci penso ...mi sforzeròòòò</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:28:13</span>
+                    <span class="message-text">viene pure zia madanova!</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 14/04/2009 – 16:28:14</span>
+                    <span class="message-text">HIHIHIHI</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 14/04/2009 – 16:28:19</span>
+                    <span class="message-text">ok</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:19:06</span>
+                    <span class="message-text">sei pronta x andare in comunità</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:19:12</span>
+                    <span class="message-text">hihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:19:18</span>
+                    <span class="message-text">tu sputti</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:19:21</span>
+                    <span class="message-text">io ho guai seri...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:19:34</span>
+                    <span class="message-text">za franca due sere fa ha lasciato le cartine in macchina e papa me l'ha portate</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:19:40</span>
+                    <span class="message-text">e per poco nn gli prendeva un infarto...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:19:52</span>
+                    <span class="message-text">ho dovuto fare di tutto e inventarmi di tuttto per farlo riprendere...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:19:55</span>
+                    <span class="message-text">ecco perchè ti dico...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:20:00</span>
+                    <span class="message-text">che la conferma sarebbe la morte di mio padre...</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:20:12</span>
+                    <span class="message-text">prima i marlboro tua e la canna n'tra macana mo i cartin</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:20:13</span>
+                    <span class="message-text">insomma</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:20:15</span>
+                    <span class="message-text">veramente sfiga</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:21:09</span>
+                    <span class="message-text">la mia l'hai trovata tu però</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:21:31</span>
+                    <span class="message-text">e lo so</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:21:37</span>
+                    <span class="message-text">le cartine le ha trovate papa invece...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:22:46</span>
+                    <span class="message-text">daiii su </span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:22:55</span>
+                    <span class="message-text">oggi pure le analisiù</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:23:00</span>
+                    <span class="message-text">mio padre moriràà presto</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:24:29</span>
+                    <span class="message-text">allora</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:24:30</span>
+                    <span class="message-text">sta laurea?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:24:38</span>
+                    <span class="message-text">dimmi pur el'indirizzo della facolta dove devo venire...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:50:26</span>
+                    <span class="message-text">prima vieni a roma che poi ti dico</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:53:37</span>
+                    <span class="message-text">e bafancùùùùùù</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:53:48</span>
+                    <span class="message-text">io cmq mercoledi sera riparto...giovedi ho un laboratorio e nn posso mancare...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:53:53</span>
+                    <span class="message-text">tanto poi nn te lo ricordi e te lo devo ridire</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:54:06</span>
+                    <span class="message-text">mamma mia chi si tu DIO MIO</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:54:21</span>
+                    <span class="message-text">nn ho ragionescusa?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:54:23</span>
+                    <span class="message-text">hihi</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:54:28</span>
+                    <span class="message-text">che merda</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:54:35</span>
+                    <span class="message-text">via salaria ...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:54:44</span>
+                    <span class="message-text">vicino p fiume</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:54:49</span>
+                    <span class="message-text">lo so</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:54:51</span>
+                    <span class="message-text">ci conosco</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:54:59</span>
+                    <span class="message-text">ohi scemooooooooooooooooooooooooooooooooooo</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:55:13</span>
+                    <span class="message-text">e che cazzo vuoi allorA?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:55:23</span>
+                    <span class="message-text">e che ne sapevo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:55:25</span>
+                    <span class="message-text">che era quello</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:55:26</span>
+                    <span class="message-text">mi fai sprecare tempo a scrivere?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:55:30</span>
+                    <span class="message-text">quella la strada...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:55:32</span>
+                    <span class="message-text">uff</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:55:34</span>
+                    <span class="message-text">mi dovevi dire p.zza fiume ecc</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:55:38</span>
+                    <span class="message-text">ah scusa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:55:43</span>
+                    <span class="message-text">ma vafancudddddd</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:55:55</span>
+                    <span class="message-text">cmq mertedi pm sono da te.,,,mercoledi sera purtroppo riparto...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:55:55</span>
+                    <span class="message-text">FORMATC</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:56:03</span>
+                    <span class="message-text">se viene peppe in macchina vengo in macchina e poi torno in bus</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:56:21</span>
+                    <span class="message-text">mercoledi però grande festa</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:56:38</span>
+                    <span class="message-text">nn ci sono</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:56:44</span>
+                    <span class="message-text">divertitevi per meeeeeeee</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:56:58</span>
+                    <span class="message-text">antipatica</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:57:04</span>
+                    <span class="message-text">no puedo</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:57:09</span>
+                    <span class="message-text">giovedi ho piperno...</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:57:19</span>
+                    <span class="message-text">antipatica</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:57:22</span>
+                    <span class="message-text">simpatico</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 17/04/2009 – 13:57:40</span>
+                    <span class="message-text">antipatica</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 17/04/2009 – 13:57:48</span>
+                    <span class="message-text">simpaticissimoOOOOOOOOO</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">B@By - 27/04/2009 – 13:58:37</span>
+                    <span class="message-text">già incazzato?</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Dott. Giò....ad Acri - 27/04/2009 – 14:26:49</span>
+                    <span class="message-text">no ora no</span>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <div class="avatar">
+                    <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/avatars/msn.png" width="90">
+                </div>
+            </aside>
+        </div>
+        <footer class="action-bar">
+            Analisi completata: letti 330 messaggi.
+        </footer>
+    </div>
+</body>
+</html>

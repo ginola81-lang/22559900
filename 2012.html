@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSN Messenger History</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: Arial, Tahoma, sans-serif; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; }
+        #app { display: flex; flex-direction: column; height: calc(100vh - 40px); width: 95%; max-width: 800px; background-color: #e3efff; border: 1px solid #71869e; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .chat-area { flex: 1; background: white; border: 1px solid #99b1cb; margin: 0; overflow-y: scroll; padding: 10px; line-height: 1.4; }
+        .toolbar { background: linear-gradient(to bottom, #fcfdfe 0%, #cbd9e9 100%); padding: 5px; display: flex; gap: 8px; border-bottom: 1px solid #99b1cb; }
+        .toolbar img { height: 20px; }
+        .main-content { display: flex; flex: 1; overflow: hidden; padding: 10px; gap: 10px; }
+        .message-row { margin: 15px 0; font-size: 13px; }
+        .sender-info { color: #7d7d7d; font-size: 11px; margin-bottom: 3px; display: block; }
+        .message-text { display: block; padding-left: 15px; font-weight: bold; word-break: break-word; }
+        .user-blue .message-text { color: #00008b; }
+        .user-pink .message-text { color: #b000b0; }
+        .sidebar { width: 110px; display: flex; flex-direction: column; align-items: center; }
+        .avatar { width: 90px; height: 90px; border: 2px solid #99b1cb; background: white; padding: 2px; }
+        .action-bar { background: #e3efff; border-top: 1px solid #99b1cb; padding: 8px 15px; font-size: 11px; color: #666; }
+        @media (max-width: 600px) { .sidebar { display: none; } .message-text { padding-left: 5px; } }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header class="toolbar">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/invite_808.png">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/send%20files_810.png">
+            <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/toolbar/webcam_812.png">
+        </header>
+        <div class="main-content">
+            <div class="chat-area">
+                
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 13/09/2012 – 17:18:08</span>
+                    <span class="message-text">ammazza sono anni che nn ti vedevo qui</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela Ginese - 26/04/2013 – 10:50:54</span>
+                    <span class="message-text">Prova Skype ipad</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela Ginese - 26/04/2013 – 10:51:11</span>
+                    <span class="message-text">Mandati un mes appena puoi che vedo se funziona</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 26/04/2013 – 10:51:33</span>
+                    <span class="message-text">prova dro! prova dro! 1 2 3 prova !</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela Ginese - 26/04/2013 – 10:53:51</span>
+                    <span class="message-text">Ma i contatti come si vedono</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela Ginese - 26/04/2013 – 10:53:58</span>
+                    <span class="message-text">Li devo aggiungere</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 26/04/2013 – 10:54:18</span>
+                    <span class="message-text">ma è un account nuovo?</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela Ginese - 26/04/2013 – 10:54:36</span>
+                    <span class="message-text">No quello della mia posta</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela Ginese - 26/04/2013 – 10:54:42</span>
+                    <span class="message-text">Con live</span>
+                </div>
+
+                <div class="message-row user-pink">
+                    <span class="sender-info">Carmela Ginese - 26/04/2013 – 10:55:00</span>
+                    <span class="message-text">Ho fatto l'accesso</span>
+                </div>
+
+                <div class="message-row user-blue">
+                    <span class="sender-info">Giò - 26/04/2013 – 10:55:01</span>
+                    <span class="message-text">ah accedi con account di msn?</span>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <div class="avatar">
+                    <img src="https://tysonmatanich.github.io/msn-chat-history-viewer/images/ui/avatars/msn.png" width="90">
+                </div>
+            </aside>
+        </div>
+        <footer class="action-bar">
+            Analisi completata: letti 11 messaggi.
+        </footer>
+    </div>
+</body>
+</html>
