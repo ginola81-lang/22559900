@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSN Messenger Login</title>
+     <script>
+        // Controllo Sessione Immediato
+        if (sessionStorage.getItem("msn_auth") == "true") {
+            window.location.href = "list.html";
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .msn-container {
+            width: 100%;
+            max-width: 450px;
+            background: linear-gradient(to bottom, #ffffff 0%, #d9e7ff 100%);
+            border: 1px solid #7a96df;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+            padding-bottom: 20px;
+        }
+
+        .header {
+            background: linear-gradient(to bottom, #7a96df 0%, #4a6ebc 100%);
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .header img {
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .profile-section {
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+        }
+
+        .avatar-border {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border: 1px solid #a0a0a0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/43/MSN_messenger_icon.png?20260117173123');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .login-form {
+            padding: 0 10%;
+            color: #2b3a8e;
+            font-size: 13px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .input-wrapper {
+            display: flex;
+            border: 1px solid #7f9db9;
+            background: white;
+        }
+
+        input[type="password"] {
+            border: none;
+            padding: 8px;
+            width: 100%;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .login-button {
+            margin-top: 10px;
+            padding: 5px 20px;
+            background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+            border: 1px solid #707070;
+            border-radius: 3px;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+            float: right;
+        }
+
+        .login-button:hover {
+            background: linear-gradient(to bottom, #e0e0e0, #cccccc);
+        }
+
+        @media (max-width: 480px) {
+            .login-form { padding: 0 20px; }
+            .avatar-border { width: 100px; height: 100px; }
+            .avatar-placeholder { width: 80px; height: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="msn-container">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/MSN_messenger_icon.png?20260117173123" alt="logo">
+            <span>MSN Messenger Chat</span>
+        </div>
+
+        <div class="profile-section">
+            <div class="avatar-border">
+                <div class="avatar-placeholder"></div>
+            </div>
+        </div>
+
+        <div class="login-form">
+            <div class="input-group">
+                <label>Password:</label>
+                <div class="input-wrapper">
+                    <input type="password" id="passwordInput" placeholder="Inserisci password">
+                </div>
+            </div>
+            <button class="login-button" onclick="checkPassword()">Accedi</button>
+        </div>
+    </div>
+</body>
+</html>
